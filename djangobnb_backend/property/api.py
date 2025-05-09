@@ -36,7 +36,7 @@ def properties_list(request):
     is_favorites = request.GET.get('is_favorites', '')
     landlord_id = request.GET.get('landlord_id', '')
 
-    country = request.GET.get('country' '')
+    country = request.GET.get('country', '')
     category = request.GET.get('category', '')
     checkin_date = request.GET.get('checkIn', '')
     checkout_date = request.GET.get('checkOut', '')
@@ -70,7 +70,7 @@ def properties_list(request):
         properties = properties.filter(bathrooms__gte=bathrooms)
 
     if country:
-        properties = properties.filter(contry=country)
+        properties = properties.filter(country=country)
 
     if category and category != 'undefined':
         properties = properties.filter(category=category)
